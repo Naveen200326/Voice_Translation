@@ -1,0 +1,39 @@
+Mini/
+
+# Environment variables
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Streamlit cache & session files
+.streamlit/
+*.db
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build or distribution folders (if any)
+build/
+dist/
+*.egg-info
+
+# Audio or media files generated locally
+*.mp3
+*.wav
