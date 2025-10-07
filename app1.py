@@ -4,7 +4,6 @@ import google.generativeai as genai
 import gtts
 from io import BytesIO
 import uuid
-
 import os
 from dotenv import load_dotenv
 
@@ -14,8 +13,8 @@ load_dotenv()
 # Get API key from environment
 api_key = os.getenv("GEMINI_API_KEY")
 # Configure Gemini API
-genai.configure(api_key="")
-model = genai.GenerativeModel('gemini-1.5-flash')
+genai.configure(api_key=api_key)
+model = genai.GenerativeModel('models/gemini-2.5-flash')
 
 # Supported languages
 LANGUAGES = {
@@ -37,8 +36,9 @@ def translate_text(text, source_lang, target_lang):
             f"Only return the translated text without any explanations or additional words.\n\n"
             f"Sentence: {text}"
         )
-        response = model.generate_content(prompt)
+        response = model.generate_content(contents=prompt)
         translated_text = response.text.strip()
+
 
         # Ensure no extra words are included
         if ":" in translated_text:  
